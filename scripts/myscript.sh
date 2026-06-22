@@ -14,4 +14,8 @@ elif [ -d "$BACKUP_DIR" ]; then
 else
 	mkdir $BACKUP_DIR
 	echo "Папка $BACKUP_DIR создана"
+	echo "---Отчет от $(date)---" > "$BACKUP_DIR/system_info.log"
+	echo "Использование памяти:" >> "$BACKUP_DIR/system_info.log"
+	free -h >> "$BACKUP_DIR/system_info.log"
+	echo "Отчет успешно сохранен в папку $BACKUP_DIR"
 fi
